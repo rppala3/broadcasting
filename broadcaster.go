@@ -19,7 +19,7 @@ func NewBroadcaster[T any](channelSize int) *Broadcaster[T] {
 }
 
 // Listen returns a Listener for the broadcast channel.
-func (bcast *Broadcaster[T]) Listen(data T) *Listener[T] {
+func (bcast *Broadcaster[T]) Listen() *Listener[T] {
 	bcast.mutex.Lock()
 	defer bcast.mutex.Unlock()
 
